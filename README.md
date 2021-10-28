@@ -5,7 +5,7 @@
 1. Clone repository
 
 ```bash
-git clone git@github.com:vuejs/docs.git
+git clone git@github.com:zeronejs/zerone-docs.git
 ```
 
 2. Install dependencies
