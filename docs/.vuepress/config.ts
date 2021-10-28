@@ -73,9 +73,11 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: '/images/hero.png',
 
-    repo: 'vuepress/vuepress-next',
+    repo: 'zeronejs/zerone',
 
+    docsBranch: 'master',
     docsDir: 'docs',
+    editLinkPattern: ':repo/blob/:branch/:path',
 
     // theme-level locales config
     locales: {
@@ -111,6 +113,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
         // page meta
         editLinkText: '在 GitHub 上编辑此页',
+        docsRepo:'zeronejs/zerone-docs',
         lastUpdatedText: '上次更新',
         contributorsText: '贡献者',
 
