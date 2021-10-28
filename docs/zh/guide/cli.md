@@ -1,6 +1,6 @@
 # 命令行接口
 
-<NpmBadge package="@zeronejs/cli" />
+<!-- <NpmBadge package="@zeronejs/cli" /> -->
 
 Zerone 命令行接口是由 [@zeronejs/cli](https://www.npmjs.com/package/@zeronejs/cli) 包提供的。
 ```bash
