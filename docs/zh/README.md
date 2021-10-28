@@ -22,7 +22,7 @@ actions:
 #     details: 灵活的插件API，使得插件可以为你的站点提供许多即插即用的功能。
 #   - title: 打包工具
 #     details: 既支持 Webpack 也支持 Vite。选一个你喜欢的来使用吧！
-footer: MIT Licensed | Copyright © 2021-present zzh
+footer: MIT Licensed | Copyright © 2021-present zeronejs
 ---
 
 ### 像数 1, 2, 3 一样容易
