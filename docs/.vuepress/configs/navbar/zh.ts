@@ -14,7 +14,7 @@ export const zh: NavbarConfig = [
         children: [
           '/zh/techniques/role.md',
           '/zh/techniques/auth.md',
-          '/zh/techniques/crud.md',
+          // '/zh/techniques/crud.md',
           // '/zh/reference/frontmatter.md',
           // '/zh/reference/components.md',
           // '/zh/reference/plugin-api.md',

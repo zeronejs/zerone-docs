@@ -22,19 +22,13 @@ zerone new project-name
 cd project-name
 ```
 
-- **步骤2**: 初始化并安装依赖
-
-```bash
-git init
-yarn
-```
-
-- **步骤3**: 安装完成后运行
+- **步骤2**: 安装依赖并运行
 
 <CodeGroup>
   <CodeGroupItem title="YARN" active>
 
 ```bash
+yarn
 yarn start
 ```
 
@@ -43,6 +37,7 @@ yarn start
   <CodeGroupItem title="NPM">
 
 ```bash
+npm install
 npm run start
 ```
 
@@ -52,4 +47,34 @@ npm run start
 
   Zerone 会在 [http://localhost:5000](http://localhost:5000) 启动一个开发服务器。[http://localhost:5000/api](http://localhost:5000/api) 启动一个 Swagger 开放api。
 
-现在，你应该已经有了一个简单可用的 Zerone 服务器。接下来，了解一下 Zerone [目录](./dir-structure.md) 相关的内容。
+现在，你应该已经有了一个简单可用的 Zerone 服务器。
+<!-- 接下来，了解一下 Zerone [目录](./dir-structure.md) 相关的内容。 -->
+
+## 一键生成CURD
+
+项目创建之后，会携带一个用户表，这一章节将帮助您一键生成接口
+
+::: tip
+generate 命令会读取当前目录下的所有 *.entity.ts文件
+
+需要您进入此文件夹
+```bash
+cd src/api/user/entities/
+```
+:::
+
+```bash
+zerone generate
+```
+
+紧接着 把 UserModule 导入根模块， 一套简单的CRUD就生成了。
+```ts
+import { UserModule } from '@api/user/user.module';
+@Module({
+    imports: [
+        UserModule,
+        // ... 其他模块
+    ]
+})
+export class AppModule {}
+```
