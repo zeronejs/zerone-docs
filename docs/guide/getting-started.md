@@ -3,32 +3,33 @@
 ## Prerequisites
 
 - [Node.js v12+](https://nodejs.org/)
-- [Yarn v1 classic](https://classic.yarnpkg.com/en/) (Optional)
+<!-- - [Yarn v1 classic](https://classic.yarnpkg.com/zh-Hans/) （可选） -->
 
-::: tip
-- With [pnpm](https://pnpm.io/), you need to set `shamefully-hoist=true` in your [`.npmrc`](https://pnpm.io/npmrc#shamefully-hoist) file.
-- With [yarn 2](https://yarnpkg.com/), you need to set `nodeLinker: 'node-modules'` in your [`.yarnrc.yml`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) file.
-:::
+<!-- ::: tip
+- 使用 [pnpm](https://pnpm.io/zh/) 时，你需要在 [`.npmrc`](https://pnpm.io/zh/npmrc#shamefully-hoist) 文件中设置 `shamefully-hoist=true` 。
+- 使用 [yarn 2](https://yarnpkg.com/) 时，你需要在 [`.yarnrc.yml`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) 文件中设置 `nodeLinker: 'node-modules'` 。
+::: -->
 
 ## Manual Installation
 
-This section will help you build a basic VuePress documentation site from ground up. If you already have an existing project and would like to keep documentation inside the project, start from Step 3.
+This chapter will help you build a simple Zerone base service from scratch.
 
-- **Step 1**: Create and change into a new directory
+- **Step 1**: Install Zerone CLI tool and create a new project
 
 ```bash
-mkdir vuepress-starter
-cd vuepress-starter
+npm i -g @zeronejs/cli
+zerone new project-name
+cd project-name
 ```
 
-- **Step 2**: Initialize your project
+- **Step 2**: Install the dependencies and run them
 
 <CodeGroup>
   <CodeGroupItem title="YARN" active>
 
 ```bash
-git init
-yarn init
+yarn
+yarn start
 ```
 
   </CodeGroupItem>
@@ -36,79 +37,44 @@ yarn init
   <CodeGroupItem title="NPM">
 
 ```bash
-git init
-npm init
+npm install
+npm run start
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-- **Step 3**: Install VuePress locally
 
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
+  Zerone launches a development server at[http://localhost:5000](http://localhost:5000). [http://localhost:5000/api](http://localhost:5000/api) started a Swagger open API.
+
+You should now have a simple working Zerone server.
+<!-- 接下来，了解一下 Zerone [目录](./dir-structure.md) 相关的内容。 -->
+
+## Generate CURD by one key
+
+After the project is created, it carries a user entity, and this section will help you generate the interface with one click.
+
+::: tip
+The generate command reads all *.entity.ts files in the current directory
+
+You need to enter this folder
+```bash
+cd src/api/user/entities/
+```
+:::
 
 ```bash
-yarn add -D vuepress@next
+zerone generate
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-
-```bash
-npm install -D vuepress@next
+Then import the UserModule into the app module, and a simple CRUD is generated.
+```ts
+import { UserModule } from '@api/user/user.module';
+@Module({
+    imports: [
+        UserModule,
+        // ... Other modules
+    ]
+})
+export class AppModule {}
 ```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-- **Step 4**: Add some [scripts](https://classic.yarnpkg.com/en/docs/package-json#toc-scripts) to `package.json`
-
-```json
-{
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  }
-}
-```
-
-- **Step 5**: Add the default temp and cache directory to `.gitignore` file
-
-```bash
-echo 'node_modules' >> .gitignore
-echo '.temp' >> .gitignore
-echo '.cache' >> .gitignore
-```
-
-- **Step 6**: Create your first document
-
-```bash
-mkdir docs
-echo '# Hello VuePress' > docs/README.md
-```
-
-- **Step 7**: Serve the documentation site in the local server
-
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
-
-```bash
-yarn docs:dev
-```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-
-```bash
-npm run docs:dev
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-  VuePress will start a hot-reloading development server at [http://localhost:8080](http://localhost:8080). When you modify your markdown files, the content in the browser will be auto updated.
-
-By now, you should have a basic but functional VuePress documentation site. Next, learn about the basics of [configuration](./configuration.md) in VuePress.

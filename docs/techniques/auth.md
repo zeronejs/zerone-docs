@@ -1,27 +1,27 @@
-# 身份验证
+# Authentication
 
-身份验证是大多数应用程序的重要组成部分。有许多不同的方法和策略来处理身份验证。任何项目采用的方法取决于其特定的应用要求。本章介绍了几种可适应各种不同要求的身份验证方法。
+Authentication is an essential part of most applications. There are many different approaches and strategies to handle authentication. The approach taken for any project depends on its particular application requirements. This chapter presents several approaches to authentication that can be adapted to a variety of different requirements.
 
 
-- **步骤1**: 安装Zerone 提供的一个auth 身份验证包，其中包括jwt策略和local策略
+- **Step 1**: Install an Auth authentication package provided by `Zerone`, including JWT Strategy and Local Strategy
 ```bash
 yarn add @zeronejs/auth
 ```
 
-- **步骤2**: 将AuthModule导入根模块
+- **Step 2**: Import the AuthModule into the root module
 
 ```ts
 import { AuthModule } from '@zeronejs/auth';
 @Module({
     imports: [
         AuthModule,
-        // ... 其他模块
+        // ... Other modules
     ]
 })
 export class AppModule {}
 ```
 ::: tip
-默认情况下 jwt策略会全局开启，如果接口需要跳过jwt验证，请使用装饰器 `@SkipJwtAuth`
+The JWT Strategy is enabled globally by default. If the interface needs to skip JWT validation, use the decorator `@SkipJwtAuth`
 ```ts
     @SkipJwtAuth()
     @Post('auth/register')
@@ -29,9 +29,9 @@ export class AppModule {}
 ```
 :::
 
-## 示例
+## The sample
 
-通常情况下，您可以使用此模块实现 登录 注册
+Typically, you can use this module to implement login registration
 ```ts
 import { UseGuards } from '@nestjs/common';
 import { SkipJwtAuth, AuthService, LocalAuthGuard, Request } from '@zeronejs/auth';

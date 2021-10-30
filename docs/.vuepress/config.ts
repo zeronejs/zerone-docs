@@ -54,8 +54,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'VuePress',
-      description: 'Vue-powered Static Site Generator',
+      title: 'Zerone',
+      description: 'zerone = zero => one, From 0 to 1, it helps front-end developers to develop Node modules quickly',
     },
     '/zh/': {
       lang: 'zh-CN',

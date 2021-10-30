@@ -49,7 +49,7 @@ export const zh: SidebarConfig = {
       children: [
         '/zh/techniques/role.md',
         '/zh/techniques/auth.md',
-        '/zh/techniques/crud.md',
+        // '/zh/techniques/crud.md',
         // '/zh/reference/cli.md',
         // '/zh/reference/config.md',
         // '/zh/reference/frontmatter.md',
