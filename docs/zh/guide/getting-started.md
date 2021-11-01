@@ -78,3 +78,11 @@ import { UserModule } from '@api/user/user.module';
 })
 export class AppModule {}
 ```
+::: warning
+当您使用自定义类型时（比如此例子中的 Gender）， `generate`仅知道此类型的名称，不知道它被定义的位置，请在`dto`文件夹中自行引入
+
+`user-create.dto.ts` `user-list.dto.ts` `user-update.dto.ts`
+```ts
+import { Gender } from '../entities/user.entity';
+```
+:::

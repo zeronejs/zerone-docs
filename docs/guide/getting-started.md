@@ -78,3 +78,11 @@ import { UserModule } from '@api/user/user.module';
 })
 export class AppModule {}
 ```
+::: warning
+When you use a custom type(like Gender in this example), `generate` only knows the name of the type, not the location where it was defined, so bring it in in the `dto` folder
+
+`user-create.dto.ts` `user-list.dto.ts` `user-update.dto.ts`
+```ts
+import { Gender } from '../entities/user.entity';
+```
+:::
