@@ -51,6 +51,7 @@ export const en: SidebarConfig = {
       children: [
         '/techniques/role.md',
         '/techniques/auth.md',
+        '/techniques/redis.md',
         // '/reference/cli.md',
         // '/reference/config.md',
         // '/reference/frontmatter.md',

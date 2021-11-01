@@ -14,6 +14,7 @@ export const en: NavbarConfig = [
         children: [
           '/techniques/role.md',
           '/techniques/auth.md',
+          '/techniques/redis.md',
           // {
           //   text: 'CLI',
           //   link: '/reference/cli.html',
