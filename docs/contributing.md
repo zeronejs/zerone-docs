@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# Contributing Guide
+# Contributing Guide 1
 
 ## Overview
 
