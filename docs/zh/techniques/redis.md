@@ -19,7 +19,7 @@ yarn add @zeronejs/redis
 import { RedisModule } from '@zeronejs/redis';
 @Module({
     imports: [
-        RedisModule.forRoot(), // 除非给定配置对象，否则使用默认值
+        RedisModule.forRoot(), // forRoot 参数 除非给定配置对象，否则使用默认值
         // ... 其他模块
     ]
 })
